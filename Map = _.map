@@ -1,0 +1,20 @@
+
+_.map = function(list,callback){
+  				let storage = [];
+  					
+  				for(var i = 0; i < list.length; i++){
+          		storage.push(callback(list[i]));
+      		}
+
+  				// _.each(list,function(element, i, list){
+  				// storage.push(callback(element, i, list));
+  				// });
+  
+  			return storage;
+	}
+
+let nums = [1,2,3,4,5,6,7,8,9];
+const numbers =_.map(nums, function(num, i,list){
+  return num + 1
+});
+console.log(numbers);
