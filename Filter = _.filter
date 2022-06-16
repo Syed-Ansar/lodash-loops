@@ -1,0 +1,23 @@
+_.filter = function(list,callback){
+  			let filteredVals = [];
+  
+  			for(var i = 0; i < list.length; i++){
+  			if(callback(list[i], i , list) === true){
+  			filteredVals.push(list[i]);
+  			}
+  			}
+  
+  		// 	_.each(list,function(element, i, list){
+  		// 		if(callback(element, i , list) === true){
+  		// filteredVals.push(element);
+  		// }
+  		// });
+  return filteredVals;
+}
+
+let nums = [1,2,3,4,5,6,7,8,9];
+
+const filNums =_.filter(nums, function(num, i,list){
+  return (num > 2 && num < 7);
+});
+console.log(filNums);
