@@ -1,3 +1,5 @@
+const _ = {};
+
 _.each = function(list, callback){
   	if(Array.isArray(list)){ //array
       for(var i =0; i < list.length; i++){
