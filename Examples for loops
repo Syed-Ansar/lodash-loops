@@ -1,0 +1,49 @@
+const _ = {};
+
+_.each = function(list, callback){
+  	if(Array.isArray(list)){ //array
+      for(var i =0; i < list.length; i++){
+        callback(list[i], i , list);
+      }
+  	}else{  // object
+        for(var key in list){
+          callback(list[key], key, list)
+        }		
+      }  	
+}
+
+_.map = function(list,callback){
+  				let storage = [];	
+  				for(var i = 0; i < list.length; i++){
+          		storage.push(callback(list[i]));
+      		}
+  			return storage;
+	}
+
+_.filter = function(list,callback){
+  			let filteredVals = [];
+  
+  			for(var i = 0; i < list.length; i++){
+  			if(callback(list[i], i , list) === true){
+  			filteredVals.push(list[i]);
+  			}
+  		}
+  return filteredVals;
+}
+
+
+let nums = [1,2,3,4,5,6,7,8,9];
+
+const filNums =_.filter(nums, (num) => {
+  return (num > 7 && num < 10);
+});
+console.log(filNums);
+
+const mappedVals = _.map(nums, (num) => {
+  return num + 12;
+});
+console.log(mappedVals);
+
+const eachVals = _.each(nums, (num) => {
+  return console.log(num + 1);
+});
