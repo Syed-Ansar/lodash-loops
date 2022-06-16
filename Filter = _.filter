@@ -1,3 +1,5 @@
+const _ = {};
+
 _.filter = function(list,callback){
   			let filteredVals = [];
   
