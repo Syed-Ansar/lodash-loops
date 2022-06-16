@@ -10,6 +10,14 @@ _.each = function(list, callback){
       }  	
 }
 
+
+let array = ['ansar','adnan','aslam'];
+let obj = {
+  'first' : "Syed",
+  'second' : "Ansar",
+  'age' : 20,
+};
+
 _.each(array,function(name, i, list){
        		if(list[i + 1]){
   				console.log(name, 'is younger than ', list[i + 1]);
