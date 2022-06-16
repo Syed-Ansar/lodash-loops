@@ -1,3 +1,4 @@
+const _ = {};
 
 _.map = function(list,callback){
   				let storage = [];
